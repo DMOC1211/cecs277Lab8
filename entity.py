@@ -23,6 +23,11 @@ class Entity():
     def hp(self):
     #returns the entitys current HP
         return self._hp
+    
+    @property
+    def max_hp(self):
+    #returns the entitys maximum HP
+        return self._max_hp
 
     def take_damage(self, dmg):
         #Reduces the HP by the dmg, HP can't go below 0
@@ -32,5 +37,6 @@ class Entity():
 
     def __str__(self):
         #Returns a string in the format: Name: hp/max_hp
-        return f"{self._name}: {self._hp}/{self._max_hp}"
+        return f"{self._name}: {self.hp}/{self.max_hp} HP"
+    
     
