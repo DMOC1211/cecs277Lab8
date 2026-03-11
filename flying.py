@@ -2,7 +2,8 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 03/10/26
 Group: 13
-Description:
+Description: A flying dragon that deals damage only using their swoops, and it's damage depends
+on whether or not they have any swoops remaining
 '''
 import random 
 from dragon import Dragon
