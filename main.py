@@ -7,28 +7,28 @@ Establishes the hero's name and hp and dragon's name and hp. Allows for the hero
 When a dragon dies the count drops and the damage the hero recieves drops, the game ends when either the hero dies or all the dragons do.
 '''
 
-from hero import Hero
-from dragon import Dragon
-from fire import FireDragon
-from flying import FlyingDragon
+import hero
+import dragon
+import fire
+import flying
 import check_input
 import random
 
 def main():
     name = input("Enter your hero's name: ")
 
-    player = Hero.Hero(name, 50)
-    dragon = Dragon.Dragon("Dragon", 150)
-    fire_dragon = Fire.FireDragon("Fire Dragon", 120)
-    flying_dragon = Flying.FlyingDragon("Flying Dragon", 130)
-    dragons = [dragon, fire_dragon, flying_dragon]
+    player = hero.Hero(name, 50)
+    basic_dragon = dragon.Dragon("Dragon", 30)
+    fire_dragon = fire.FireDragon("Fire Dragon", 40)
+    flying_dragon = flying.FlyingDragon("Flying Dragon", 25)
+    dragons=[basic_dragon, fire_dragon, flying_dragon]
     while True:
         print(player)
         print("Dragons:")
         for d in dragons:
             print(d)
-        choice = check_input.get_int_range("Choose a dragon to attack: ", 1, dragons.__len__())
-        dragon = dragons[choice - 1]
+        choice = check_input.get_int_range("Choose a dragon to attack: ", 1, len(dragons))
+        dragon1= dragons[choice - 1]
 
         print("Pick an attack:")
         print("1. Sword Attack")
@@ -36,11 +36,11 @@ def main():
         choice = check_input.get_int_range("Enter your choice (1 or 2): ", 1, 2)
 
         if choice == 1:
-            print(player.sword_attack(dragon))
+            print(player.sword_attack(dragon1))
         elif choice == 2:
-            print(player.arrow_attack(dragon))
+            print(player.arrow_attack(dragon1))
         for d in dragons:
-            if d.health <= 0:
+            if d.hp <= 0:
                 print(f"{d.name} has been defeated!")
                 dragons.remove(d)
         print()
@@ -62,7 +62,7 @@ def main():
             print(attacker.special_attack(player))
         print()
 
-        if player.health <= 0:
+        if player.hp <= 0:
             print("You have been defeated by the dragons. Game over.")
             break
 
