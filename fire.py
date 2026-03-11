@@ -27,4 +27,4 @@ class FireDragon(Dragon.Dragon):
 
     def __str__(self):
         #Shows dragon's name, HP and the remaining fire shots
-        return f"{self.name}: {self.health} HP (Fire shots: {self._fire_shots})"
+        return f"{self._name}: {self.hp}/{self.max_hp} HP (Fire shots: {self._fire_shots})"
