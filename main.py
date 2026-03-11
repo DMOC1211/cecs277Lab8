@@ -2,7 +2,9 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 03/10/26
 Group: 13
-Description:
+Description: Creates and loops how and when the hero interacts with the dragons and how/when the dragons interact with the hero.
+Establishes the hero's name and hp and dragon's name and hp. Allows for the hero to pick which attack to hit which dragon.  
+When a dragon dies the count drops and the damage the hero recieves drops, the game ends when either the hero dies or all the dragons do.
 '''
 
 from hero import Hero
