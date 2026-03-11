@@ -2,7 +2,7 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 03/10/26
 Group: 13
-Description:
+Description: Creates the Dragon class that conducts basic attacks and special attacks.
 '''
 import random
 import Entity
