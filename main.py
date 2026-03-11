@@ -5,7 +5,6 @@ Group: 13
 Description:
 '''
 
-import Entity
 from hero import Hero
 from dragon import Dragon
 from fire import FireDragon
@@ -14,30 +13,56 @@ import check_input
 import random
 
 def main():
-    player = Hero.Hero("Player", 100)
+    name = input("Enter your hero's name: ")
+
+    player = Hero.Hero(name, 50)
     dragon = Dragon.Dragon("Dragon", 150)
-    print(player)
-    print(dragon) 
-    print()
+    fire_dragon = Fire.FireDragon("Fire Dragon", 120)
+    flying_dragon = Flying.FlyingDragon("Flying Dragon", 130)
+    dragons = [dragon, fire_dragon, flying_dragon]
+    while True:
+        print(player)
+        print("Dragons:")
+        for d in dragons:
+            print(d)
+        choice = check_input.get_int_range("Choose a dragon to attack: ", 1, dragons.__len__())
+        dragon = dragons[choice - 1]
 
-    print("Pick an attack:")
-    print("1. Sword Attack")
-    print("2. Arrow Attack")
-    choice = check_input.get_int_range("Enter your choice (1 or 2): ", 1, 2)
+        print("Pick an attack:")
+        print("1. Sword Attack")
+        print("2. Arrow Attack")
+        choice = check_input.get_int_range("Enter your choice (1 or 2): ", 1, 2)
 
-    if choice == 1:
-        print(player.sword_attack(dragon))
-    elif choice == 2:
-        print(player.arrow_attack(dragon))
+        if choice == 1:
+            print(player.sword_attack(dragon))
+        elif choice == 2:
+            print(player.arrow_attack(dragon))
+        for d in dragons:
+            if d.health <= 0:
+                print(f"{d.name} has been defeated!")
+                dragons.remove(d)
+        print()
 
-    print(dragon)
-    print()
+        if len(dragons) == 0:
+            print("Congratulations! You have defeated all the dragons!")
+            break
+        
+        try:
+            attacker = random.choice(dragons)
+        except IndexError:
+            print("All dragons have been defeated!")
+            break
 
-    choice_dragon = random.randint(1, 2)
-    if choice_dragon == 1:
-        print(dragon.basic_attack(player))
-    elif choice_dragon == 2:
-        print(dragon.special_attack(player))
-    print(player)
+        choice_dragon = random.randint(1, 2)
+        if choice_dragon == 1:
+            print(attacker.basic_attack(player))
+        elif choice_dragon == 2:
+            print(attacker.special_attack(player))
+        print()
+
+        if player.health <= 0:
+            print("You have been defeated by the dragons. Game over.")
+            break
+
 
 main()
