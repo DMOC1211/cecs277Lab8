@@ -2,7 +2,8 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 03/10/26
 Group: 13
-Description:
+Description:  Creates the hero that does player plays as and has to beat all three dragons in order to win.  
+Hero has 2 kinds of attacks being with the hero's sword or arrow. 
 '''
 
 import random
