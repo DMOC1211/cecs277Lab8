@@ -8,7 +8,7 @@ Description:
 import random
 from entity import Entity 
 
-class Hero(Entity.Entity):
+class Hero(Entity):
     
     def sword_attack(self, dragon):
         damage = random.randint(1, 6) + random.randint(1, 6)
