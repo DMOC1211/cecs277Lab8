@@ -2,7 +2,7 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 03/10/26
 Group: 13
-Description:
+Description: Creates the basis for each entity, hero or any of the dragons. Establishes their HP, name and how they take damage.
 '''
 
 class Entity():
