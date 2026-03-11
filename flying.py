@@ -27,4 +27,4 @@ class FlyingDragon(Dragon.Dragon):
 
     def __str__(self):
         # Return dragon's name, HP and remaining swoops
-        return f"{self.name}: {self.health} HP (Swoops: {self._swoops})"
+        return f"{self._name}: {self.hp}/{self.max_hp} HP (Swoops: {self._swoops})"
