@@ -2,7 +2,7 @@
 Name: Jacob Miranda & Daniel Puerto
 Date: 03/10/26
 Group: 13
-Description:
+Description: A dragon that breathes fire and has a special attack that is limited to 3 shots
 '''
 
 import random 
