@@ -31,5 +31,5 @@ class Entity:
 
   def __str__(self):
     #Returns a string in the format: Name: hp/max_hp
-    return f"{self._name}: {self._hp}/self._max_hp}"
+    return f"{self._name}: {self._hp}/{self._max_hp}"
     
