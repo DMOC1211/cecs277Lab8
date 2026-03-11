@@ -6,8 +6,10 @@ Description:
 '''
 
 import Entity
-import Hero
-import Dragon
+from hero import Hero
+from dragon import Dragon
+from fire import FireDragon
+from flying import FlyingDragon
 import check_input
 import random
 
