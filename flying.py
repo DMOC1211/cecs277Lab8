@@ -8,14 +8,14 @@ import random
 from dragon Import Dragon
 
 class FlyingDragon(Dragon):
-
+# A dragon that can swoop a limited number of times
   def __init__(self,name, hp):
-
+    # Initializes FlyingDragon with a name, HP and swoop count, flying dragon starts with 2 swoops
     super().__init__(name, hp)
     self._swoops = 2
 
   def special_attack(self, hero):
-
+    # Swoop attack deals 5-9 damage, but only if swoops remain, if there are no swoops remaining, it deals 0 damage and prints a message
     if self._swoops > 0:
       dmg = random.randint(5,9)
       hero.take_damage(dmg)
@@ -25,5 +25,5 @@ class FlyingDragon(Dragon):
       return f"{self.name} tries to swoop but has no swoops left!"
 
   def __str__(self):
-
+    # Return dragon's name, HP and remaining swoops
     return f"{self.name}: {self.hp} HP (Swoops: {self._swoops})"
