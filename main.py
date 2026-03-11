@@ -15,6 +15,7 @@ import check_input
 import random
 
 def main():
+    #Allows for the naming of the player, then creates said player and 3 dragons
     name = input("Enter your hero's name: ")
 
     player = hero.Hero(name, 50)
@@ -22,7 +23,10 @@ def main():
     fire_dragon = fire.FireDragon("Fire Dragon", 40)
     flying_dragon = flying.FlyingDragon("Flying Dragon", 25)
     dragons=[basic_dragon, fire_dragon, flying_dragon]
+    
+    #Gameplay loop
     while True:
+        #Prints the status of all combatants, then allows player to pick a dragon to attack.
         print(player)
         print("Dragons:")
         for d in dragons:
@@ -30,24 +34,23 @@ def main():
         choice = check_input.get_int_range("Choose a dragon to attack: ", 1, len(dragons))
         dragon1= dragons[choice - 1]
 
+        #Lets the player pick the type of attack, then executes it.
         print("Pick an attack:")
         print("1. Sword Attack")
         print("2. Arrow Attack")
         choice = check_input.get_int_range("Enter your choice (1 or 2): ", 1, 2)
-
         if choice == 1:
             print(player.sword_attack(dragon1))
         elif choice == 2:
             print(player.arrow_attack(dragon1))
+            
+        #Checks if any dragon is defeated; removes them if so. If all are gone, game ends
+        #Otherwise, chooses a dragon to attack
         for d in dragons:
             if d.hp <= 0:
                 print(f"{d.name} has been defeated!")
                 dragons.remove(d)
         print()
-
-        if len(dragons) == 0:
-            print("Congratulations! You have defeated all the dragons!")
-            break
         
         try:
             attacker = random.choice(dragons)
@@ -55,6 +58,7 @@ def main():
             print("All dragons have been defeated!")
             break
 
+        #Choosen dragon makes a random attack. If this kills the player, end the game
         choice_dragon = random.randint(1, 2)
         if choice_dragon == 1:
             print(attacker.basic_attack(player))
