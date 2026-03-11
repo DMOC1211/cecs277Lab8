@@ -4,3 +4,7 @@ Date: 03/10/26
 Group: 13
 Description:
 '''
+
+
+import random
+from entity Import Entity
