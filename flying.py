@@ -5,7 +5,7 @@ Group: 13
 Description:
 '''
 import random 
-from dragon Import Dragon
+from dragon import Dragon
 
 class FlyingDragon(Dragon):
 # A dragon that can swoop a limited number of times
