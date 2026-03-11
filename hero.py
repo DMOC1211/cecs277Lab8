@@ -6,12 +6,10 @@ Description:
 '''
 
 import random
-import Entity 
+from entity import Entity 
 
 class Hero(Entity.Entity):
-    def __init__(self, name, max_hp):
-        super().__init__(name, max_hp)
-
+    
     def sword_attack(self, dragon):
         damage = random.randint(1, 6) + random.randint(1, 6)
         dragon.take_damage(damage)
