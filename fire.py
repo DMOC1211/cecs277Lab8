@@ -6,9 +6,9 @@ Description: A dragon that breathes fire and has a special attack that is limite
 '''
 
 import random 
-from dragon import Dragon
+import dragon
 
-class FireDragon(Dragon.Dragon):
+class FireDragon(dragon.Dragon):
 # A dragon that can breathe fire a limited number of times
     def __init__(self, name, hp):
       # Initializes a Fire Dragon with a name, HP and fire shot count. Fire dragons start with 3 fire shots 
