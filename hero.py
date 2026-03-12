@@ -7,7 +7,7 @@ Hero has 2 kinds of attacks being with the hero's sword or arrow.
 '''
 
 import random
-from entity import Entity 
+import entity 
 
 class Hero(Entity.Entity):
     def __init__(self, name, max_hp):
