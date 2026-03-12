@@ -6,9 +6,9 @@ Description: A flying dragon that deals damage only using their swoops, and it's
 on whether or not they have any swoops remaining
 '''
 import random 
-from dragon import Dragon
+import dragon
 
-class FlyingDragon(Dragon.Dragon):
+class FlyingDragon(dragon.Dragon):
 # A dragon that can swoop a limited number of times
     def __init__(self, name, hp):
     # Initializes FlyingDragon with a name, HP and swoop count, flying dragon starts with 2 swoops
