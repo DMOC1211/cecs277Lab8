@@ -5,9 +5,9 @@ Group: 13
 Description: Creates the Dragon class that conducts basic attacks and special attacks.
 '''
 import random
-import Entity
+import entity
 
-class Dragon(Entity.Entity):
+class Dragon(entity.Entity):
     # Creates dragon class
     def __init__(self, name, max_hp):
         #Initializes dragon with a name and max health
